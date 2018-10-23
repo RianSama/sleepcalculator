@@ -1,28 +1,24 @@
 # Import modules
 import tkinter
 
-get = self.get()
 
-'''def submit(b1):
-    global age
-    age = b1.get()'''
+class App(tkinter.Tk):
+    def __init__(self):
+        #self.title("Sleep Calculator")
+        #self.geometry("640x360")
+        tkinter.Tk.__init__(self)
+        self.label = tkinter.Label(self, text="How many years old are you?")
+        self.entry = tkinter.Entry(self)
+        self.button = tkinter.Button(self, text="Submit", command=self.on_button)
+        self.label.pack()
+        self.entry.pack()
+        self.button.pack()
+    def on_button(self):
+        print(self.entry.get())
 
 
 # Draw window
-window = tkinter.Tk()
+window = App()
 window.title("Sleep Calculator")
-window.geometry("640x360")
-
-
-l1 = tkinter.Label(window, text="How many years old are you?")
-e1 = tkinter.Entry(window)
-b1 = tkinter.Button(window, text="Submit", command=get)
-
-print(a)
-
-l1.pack()
-e1.pack()
-b1.pack()
-
-
+window.geometry("360x640")
 window.mainloop()
